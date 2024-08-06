@@ -1,0 +1,67 @@
+﻿@model ProjectEcommerce.Models.Company
+<div class="card shadow border-0 mt-4">
+	<div class="card-header bg-secondary bg-gradient m-lg-0 py-3">
+		<div class="row">
+			<div class="col-12 text-center">
+				<h2 class="text-white py-2">Create Product</h2>
+			</div>
+		</div>
+		<div class="card-body p-4">
+			<form method="post" class="row" enctype="multipart/form-data">
+				<div class="border p-3">
+					
+					@* <div asp-validation-summary="ModelOnly"></div> *@
+					<div class="form-floating py-2 col-12">
+						<input type="text"  class="form-control border-0 shadow" asp-for="Name" />
+						<label asp-for="Name" class="ms-2"></label>
+						
+						<span asp-validation-for="Name" class="text-danger"></span>
+					</div>
+					<div class="form-floating py-2 col-12">
+						<input type="text" class="form-control border-0 shadow" asp-for="StreetAdress" />
+						<label asp-for="StreetAdress" class="ms-2"></label>
+						
+						<span asp-validation-for="StreetAdress" class="text-danger"></span>
+					</div>
+					<div class="form-floating py-2 col-12">
+						<input type="text" class="form-control border-0 shadow" asp-for="City" />
+						<label asp-for="City" class="ms-2"></label>
+						
+						<span asp-validation-for="City" class="text-danger"></span>
+					</div>
+					<div class="form-floating py-2 col-12">
+						<input type="text" class="form-control border-0 shadow" asp-for="State" />
+						<label asp-for="State" class="ms-2"></label>
+
+						<span asp-validation-for="State" class="text-danger"></span>
+					</div>
+					<div class="form-floating py-2 col-12">
+						<input type="text" class="form-control border-0 shadow" asp-for="PhoneNunber" />
+						<label asp-for="PhoneNunber" class="ms-2"></label>
+
+						<span asp-validation-for="PhoneNunber" class="text-danger"></span>
+					</div>
+					
+					<div class="row">
+						<div class="col-6 col-md-3">
+							<button type="submit" class="btn btn-primary form-control">Create</button>
+
+						</div>
+						<div class="col-6 col-md-3">
+							<a asp-controller="Company" asp-action="Index" class="btn btn-primary form-control">
+								Back to List
+							</a>
+						</div>
+					</div>
+
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+@section Scripts{
+	@{
+	<partial name="_ValidationScriptsPartial" />
+	}
+}

@@ -1,0 +1,89 @@
+﻿@model ProjectEcommerce.Models.Product
+
+@{
+    ViewData["Title"] = "Edit";
+}
+<div class="card shadow border-0 mt-4">
+	<div class="card-header bg-secondary bg-gradient m-lg-0 py-3">
+		<div class="row">
+			<div class="col-12 text-center">
+				<h2 class="text-white py-2">Edit Product</h2>
+			</div>
+		</div>
+		<div class="card-body p-4">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Id" />
+				<div class="form-floating py-2 col-12">
+					<input type="text" class="form-control border-0 shadow" asp-for="Title" />
+					<label asp-for="Title" class="ms-2"></label>
+
+					<span asp-validation-for="Title" class="text-danger"></span>
+				</div>
+				<div class="form-floating py-2 col-12">
+					<input type="text" class="form-control border-0 shadow" asp-for="Description" />
+					<label asp-for="Description" class="ms-2"></label>
+
+					<span asp-validation-for="Description" class="text-danger"></span>
+				</div>
+				<div class="form-floating py-2 col-12">
+					<input type="text" class="form-control border-0 shadow" asp-for="ListPrice" />
+					<label asp-for="ListPrice" class="ms-2"></label>
+
+					<span asp-validation-for="ListPrice" class="text-danger"></span>
+				</div>
+				<div class="form-floating py-2 col-12">
+					<input type="text" class="form-control border-0 shadow" asp-for="Price" />
+					<label asp-for="Price" class="ms-2"></label>
+
+					<span asp-validation-for="Price" class="text-danger"></span>
+				</div>
+				<div class="form-floating py-2 col-12">
+					<input type="text" class="form-control border-0 shadow" asp-for="ListPrice50" />
+					<label asp-for="ListPrice50" class="ms-2"></label>
+
+					<span asp-validation-for="ListPrice50" class="text-danger"></span>
+				</div>
+				<div class="form-floating py-2 col-12">
+					<input type="text" class="form-control border-0 shadow" asp-for="ListPrice100" />
+					<label asp-for="ListPrice100" class="ms-2"></label>
+
+					<span asp-validation-for="ListPrice100" class="text-danger"></span>
+				</div>
+				<div class="form-floating py-2 col-12">
+					<input type="text" class="form-control border-0 shadow" asp-for="ImageUrl" />
+					<label asp-for="ImageUrl" class="ms-2"></label>
+
+					<span asp-validation-for="ImageUrl" class="text-danger"></span>
+				</div>
+				<div class="form-floating py-2 col-12">
+					@* <select asp-for="CategoryId" asp-items="ViewBag.CategoryList" class="form-select"> *@
+					@* <select asp-for="Product.CategoryId" asp-items="@ViewData["CategoryItems"] as IEnumerable<SelectListItem>" class="form-select"> *@
+					@* <select asp-for="CategoryId" asp-items="CategotyList" class="form-select">
+						<option disabled selected>--Select a Category</option>
+					</select>
+
+					<label asp-for="CategoryId" class="ms-2"></label>
+
+					<span asp-validation-for="CategoryId" class="text-danger"></span> *@
+				</div>
+                <div class="row mt-4">
+                    <div class="col-6 col-md-3">
+                        <button type="submit" class="btn btn-primary form-control">Save</button>
+
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <a asp-controller="Product" asp-action="Index" class="btn btn-primary form-control">
+                            Back to List
+                        </a>
+                    </div>
+                </div>
+            </form>
+		</div>
+	</div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
